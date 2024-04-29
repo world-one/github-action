@@ -20,7 +20,7 @@ jobs:
         run: npm install
 
       - name: Comment on PR
-        uses: unsplash/comment-on-pr@v1
+        uses: unsplash/comment-on-pr@v1.3.0
         with:
           message: |
             Hello! Thank you for opening this pull request.
