@@ -24,7 +24,6 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const github = context.github;
             const comment = `
             Hello! Thank you for opening this pull request.
             <!-- Your custom comment goes here -->
