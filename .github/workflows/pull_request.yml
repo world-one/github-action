@@ -25,10 +25,12 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            const targetBranch = context.payload.pull_request.base.ref;
             const comment = `
-            Hello! Thank you for opening this pull request.
+            대상 브랜치의 이름이 ${targetBranch}로 지정되었습니다.
             <!-- Your custom comment goes here -->
             `;
+            
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
