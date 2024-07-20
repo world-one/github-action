@@ -23,7 +23,7 @@ jobs:
       - name: Get branch name
         id: branch
         run: |
-          branch_name=${{ github.event.pull_request.head.ref }}
+          branch_name=${{ github.base_ref }}
           echo "Branch name: $branch_name"
 
       - name: Set merge method
