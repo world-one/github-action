@@ -20,23 +20,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Get branch name
-        id: branch
-        run: |
-          branch_name=${{ github.base_ref }}
-          echo "Branch name: $branch_name"
-
-      - name: Set merge method
-        id: set-merge-method
-        run: |
-          if [ "$branch_name" == "main" ]; then
-            merge_method="squash"
-          else
-           merge_method="rebase"
-          fi
-          echo "Merge method: $merge_method"
-
-
       - name: Comment on PR
         uses: actions/github-script@v5
         with:
@@ -48,7 +31,7 @@ jobs:
             <!-- Your custom comment goes here -->
             `;
             
-            context.pull_request.
+            console.log(github.rest.issues);
             
             github.rest.issues.createComment({
               issue_number: context.issue.number,
